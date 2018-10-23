@@ -12,7 +12,7 @@ logging.basicConfig(format='%(asctime)s: %(levelname)s: %(message)s', level=logg
 
 def getInfobox(text):
     wikicode = mwparserfromhell.parser(text)
-    template = wikicode.filter_templates('Infobox')
+    template = wikicode.filter_templates('Infobox Olympics')
 
 
 def main():
@@ -27,10 +27,10 @@ def main():
         for line in fin:
             parser.feed(line)
 
-            if len(handler._pages) > 200:
-                break
+        #    if len(handler._pages) > 200:
+        #        break
     
-    print(handler._pages[19])
+    # print(handler._pages[19])
 
 if __name__ == '__main__':
     main()

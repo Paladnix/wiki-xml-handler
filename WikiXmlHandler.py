@@ -1,4 +1,5 @@
 import xml.sax
+from utils import *
 
 class WikiXmlHandler(xml.sax.handler.ContentHandler):
 
@@ -26,4 +27,7 @@ class WikiXmlHandler(xml.sax.handler.ContentHandler):
             self._values[name] = ' '.join(self._buffer)
 
         if name == 'page':
-            self._pages.append((self._values['title'], self._values['text']))
+            # self._pages.append((self._values['title'], self._values['text']))
+            getInfobox(self._values['title'], self._values['text']);
+
+
